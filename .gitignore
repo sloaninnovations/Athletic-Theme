@@ -1,0 +1,7 @@
+._*
+.DS_Store
+netbeans
+.project
+*~
+sites/default/settings.php
+sites/default/files
