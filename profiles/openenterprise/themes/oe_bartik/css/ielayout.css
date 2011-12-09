@@ -1,0 +1,46 @@
+  #header div.section,
+  #featured div.section,
+  #messages div.section,
+  #main,
+  #triptych,
+  #footer-columns,
+  #footer {
+    width: 960px;
+  }
+  #content,
+  #sidebar-first,
+  #sidebar-second,
+  #triptych .nested,
+  #footer-columns .nested  {
+    display: inline;
+    float: left; /* LTR */
+    position: relative;
+  }
+  .one-sidebar #content {
+    width: 67%;
+  }
+  .two-sidebars #content {
+    margin-left: 25%;
+    width: 50%;
+  }
+  .no-sidebars #content {
+    width: 100%;
+    float: none;
+  }
+  .one-sidebar #sidebar-first,
+  .one-sidebar #sidebar-second {
+    width: 33%;
+  }
+  .two-sidebars #sidebar-first,
+  .two-sidebars #sidebar-second {
+    width: 25%;
+  }
+  .two-sidebars #sidebar-first {
+    margin-left: -75%;
+  }
+  #triptych .nested {
+    width: 33%;
+  }
+  #footer-columns .nested {
+    width: 25%;
+  }

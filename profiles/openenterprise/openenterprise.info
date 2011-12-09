@@ -1,0 +1,85 @@
+name = OpenEnterprise
+description = OpenEnterprise Distribution by LevelTen Interactive
+distribution_name = OpenEnterprise
+
+version = 7.x-1.0-BETA1
+core = 7.x
+
+; Core
+dependencies[] = block
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = dashboard
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = syslog
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = toolbar
+dependencies[] = overlay
+dependencies[] = field
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = rdf
+
+; Contrib
+
+;; Fields
+dependencies[] = date
+dependencies[] = date_popup
+dependencies[] = date_views
+dependencies[] = field_group
+dependencies[] = link
+dependencies[] = options_element
+dependencies[] = references
+dependencies[] = node_reference
+dependencies[] = user_reference
+
+;; Path
+dependencies[] = globalredirect
+dependencies[] = pathauto
+dependencies[] = redirect
+dependencies[] = transliteration
+
+;; Text Editor
+dependencies[] = htmlpurifier
+dependencies[] = imce_wysiwyg
+dependencies[] = imce
+dependencies[] = wysiwyg
+
+;; UX Enhancements
+dependencies[] = backports
+dependencies[] = block_visibility
+dependencies[] = nodeblock
+dependencies[] = nodeconnect
+dependencies[] = simplified_menu_admin
+dependencies[] = simplified_modules
+dependencies[] = ux_elements
+
+;; Sitebuilding Tools
+dependencies[] = apps
+dependencies[] = backup_migrate
+dependencies[] = boxes
+dependencies[] = ctools
+dependencies[] = defaultcontent
+dependencies[] = email_registration
+dependencies[] = entity
+dependencies[] = entitycache
+dependencies[] = features
+dependencies[] = libraries
+dependencies[] = menu_block
+dependencies[] = strongarm
+dependencies[] = token
+dependencies[] = views
+dependencies[] = views_ui
+
+;; Custom
+;dependencies[] = tutorials
+
+files[] = openenterprise.profile

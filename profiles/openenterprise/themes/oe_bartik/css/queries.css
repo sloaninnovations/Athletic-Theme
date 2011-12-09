@@ -1,0 +1,100 @@
+@media all and (min-width: 960px) {
+  #header div.section,
+  #featured div.section,
+  #messages div.section,
+  #main,
+  #triptych,
+  #footer-columns,
+  #footer {
+    max-width: 1280px;
+  }
+  #content,
+  #sidebar-first,
+  #sidebar-second,
+  #triptych .nested,
+  #footer-columns .nested  {
+    display: inline;
+    float: left; /* LTR */
+    position: relative;
+  }
+  .one-sidebar #content {
+    width: 67%;
+  }
+  .sidebar-first #content {
+    float: right;
+  }
+  .two-sidebars #content {
+    margin-left: 25%;
+    width: 50%;
+  }
+  .no-sidebars #content {
+    width: 100%;
+    float: none;
+  }
+  .one-sidebar #sidebar-first,
+  .one-sidebar #sidebar-second {
+    width: 33%;
+  }
+  .two-sidebars #sidebar-first,
+  .two-sidebars #sidebar-second {
+    width: 25%;
+  }
+  .two-sidebars #sidebar-first {
+    margin-left: -75%;
+  }
+  #triptych .nested {
+    width: 33%;
+  }
+  #footer-columns .nested {
+    width: 25%;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 959px) {
+  #content,
+  #triptych .nested,
+  #footer-columns .nested  {
+    display: inline;
+    float: left; /* LTR */
+    position: relative;
+  }
+  #content {
+    width: 75%;
+  }
+  .no-sidebars #content {
+    width: 100%;
+    float: none;
+  }
+  #sidebar-first,
+  #sidebar-second {
+    display: inline;
+    float: right; /* LTR */
+    position: relative;
+  }
+  #sidebar-first,
+  #sidebar-second {
+    width: 25%;
+  }
+  #triptych .nested {
+    width: 33%;
+  }
+  #footer-columns .nested {
+    width: 25%;
+  }
+}
+
+@media all and (max-width: 767px) {
+  #content,
+  #triptych .nested,
+  #footer-columns .nested  {
+    float: none;
+    position: relative;
+    width: 100%;
+  }
+  #sidebar-first,
+  #sidebar-second {
+    float: none;
+    position: relative;
+    width: 100%;
+  }
+}

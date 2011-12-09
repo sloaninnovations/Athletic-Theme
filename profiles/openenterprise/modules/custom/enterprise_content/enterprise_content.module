@@ -1,0 +1,116 @@
+<?php
+/**
+ * @file
+ * Code for the OpenEnterprise Content feature.
+ */
+
+include_once('enterprise_content.features.inc');
+
+/**
+ * Implements hook_init().
+ *
+ * This is a bit of a hack but there is no other way to run a post install
+ * hook after a feature is installed. Ideally this can be fixed at some point.
+ */
+function enterprise_content_init() {
+  if (!variable_get('enterprise_content_installed', FALSE) && defaultcontent_get_default('home')) {
+    // Set the site home page.
+    $nid = defaultcontent_get_default('home');
+    if ($nid) {
+      variable_set('site_frontpage', 'node/' . $nid);
+    }
+    // Create menu items for nodes since this doesn't export well yet.
+    $defaultcontent = array(
+      'about_us' => 'About Us',
+      'privacy_policy' => 'Privacy Policy',
+      'terms_and_conditions' => 'Terms and Conditions',
+    );
+    foreach($defaultcontent as $machinename => $title) {
+      $nid = defaultcontent_get_default($machinename);
+      if ($nid) {
+        $menu_link = array(
+          'link_title' => $title,
+          'link_path' => 'node/' . $nid,
+          'menu_name' => 'menu-legal-notices',
+        );
+        menu_link_save($menu_link);
+      }
+    }
+
+    // Enable some default blocks.
+    $default_theme = variable_get('theme_default', 'bartik');
+    $values = array(
+      array(
+        'module' => 'menu',
+        'delta' => 'menu-legal-notices',
+        'theme' => $default_theme,
+        'status' => 1,
+        'weight' => 0,
+        'title' => '<none>',
+        'region' => 'footer_firstcolumn',
+        'pages' => '',
+        'cache' => -1,
+      ),
+      array(
+        'module' => 'menu',
+        'delta' => 'menu-social',
+        'theme' => $default_theme,
+        'status' => 1,
+        'title' => '<none>',
+        'weight' => 0,
+        'region' => 'footer_secondcolumn',
+        'pages' => '',
+        'cache' => -1,
+      ),
+      array(
+        'module' => 'boxes',
+        'delta' => 'oe1',
+        'theme' => $default_theme,
+        'status' => 1,
+        'weight' => -1,
+        'visibility' => 1,
+        'region' => 'triptych_first',
+        'pages' => '<front>',
+        'cache' => -2,
+      ),
+      array(
+        'module' => 'boxes',
+        'delta' => 'oe2',
+        'theme' => $default_theme,
+        'status' => 1,
+        'weight' => -1,
+        'visibility' => 1,
+        'region' => 'triptych_middle',
+        'pages' => '<front>',
+        'cache' => -2,
+      ),
+      array(
+        'module' => 'boxes',
+        'delta' => 'oe3',
+        'theme' => $default_theme,
+        'status' => 1,
+        'weight' => -1,
+        'visibility' => 1,
+        'region' => 'triptych_last',
+        'pages' => '<front>',
+        'cache' => -2,
+      ),
+      array(
+        'module' => 'views',
+        'delta' => 'oe_rotating_banner-block',
+        'theme' => $default_theme,
+        'status' => 1,
+        'weight' => -1,
+        'visibility' => 1,
+        'region' => 'featured',
+        'pages' => '<front>',
+        'cache' => -1,
+      ),
+    );
+    foreach ($values as $record) {
+      drupal_write_record('block', $record, array('theme', 'module', 'delta'));
+    }
+
+    variable_set('enterprise_content_installed', TRUE);
+  }
+}

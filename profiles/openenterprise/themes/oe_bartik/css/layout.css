@@ -1,0 +1,72 @@
+
+/* ---------- Basic Layout Styles ----------- */
+
+html,
+body,
+#page  {
+  height: 100%;
+}
+#page-wrapper {
+  min-height: 100%;
+}
+#header {
+  position: relative;
+  z-index: 100;
+}
+#header div.section,
+#featured div.section,
+#messages div.section,
+#main,
+#triptych,
+#footer-columns,
+#footer {
+  margin-left: auto;
+  margin-right: auto;
+}
+#header div.section {
+  position: relative;
+}
+.region-header {
+  float: right; /* LTR */
+  margin: 0 5px 10px;
+}
+.with-secondary-menu .region-header {
+  margin-top: 3em;
+}
+.without-secondary-menu .region-header {
+  margin-top: 15px;
+}
+#secondary-menu {
+  position: absolute;
+  right: 0; /* LTR */
+  top: 0;
+  width: 50%;
+}
+
+#main-wrapper {
+  min-height: 300px;
+}
+#content .section,
+.sidebar .section {
+  padding: 0 15px;
+}
+#breadcrumb {
+  margin: 0 15px;
+}
+
+.region-triptych-first,
+.region-triptych-middle,
+.region-triptych-last {
+  margin: 20px 20px 30px;
+}
+#footer-wrapper {
+  padding: 35px 5px 30px;
+}
+
+.region-footer-firstcolumn,
+.region-footer-secondcolumn,
+.region-footer-thirdcolumn,
+.region-footer-fourthcolumn {
+  padding: 0 10px;
+}
+
